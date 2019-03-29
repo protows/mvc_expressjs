@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>sql mvc</title>
+ </head>
+ <body>  
+	
+ <form action="/add" method="POST">
+   <input name="car" placeholder="enter car">
+   <input name="year" placeholder="enter year">
+   <button type="submit" name="add">add</button>
+  </form>
+
+   
+   {{#if title}}
+    <ul>
+		{{#each title}}
+			<form action="/delete" method="POST" id="form2">
+			<input name="id" value="{{id}}" hidden="true">
+		   	<li>{{id}} {{car}} {{year}}</li>&nbsp; &nbsp;
+		   	<button type="submit" name="delete">delete</button>
+	    	</form>
+	    	<form action="/update" method="POST">
+			<input name="id" value="{{id}}" hidden="true">
+			&nbsp; &nbsp;<input name="update">
+			<button type="submit">update</button>
+
+	    	</form>
+	    	<br>
+	    {{else}}
+	    	<li>Список пуст</li>
+	  {{/each}}
+    </ul>
+{{/if}}
+  
+
+
+ <link rel="stylesheet" type="text/css" href="/css1.css">
+
+ </body>
+</html>
